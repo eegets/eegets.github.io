@@ -12,3 +12,29 @@ pre.highlight, code {
 	line-height: 1.4em;
 	tab-size: 4;
 }
+
+
+.highlighter-rouge {
+  @extend %code-snippet-bg;
+  @extend %code-snippet-radius;
+
+  color: var(--highlighter-rouge-color);
+  margin-top: 0.5rem;
+  margin-bottom: 1.2em; /* Override BS Inline-code style */
+}
+
+/* Hide line numbers for default, console, and terminal code snippets */
+div {
+  &[class^='highlighter-rouge'],
+  &.language-plaintext.highlighter-rouge,
+  &.language-console.highlighter-rouge,
+  &.language-terminal.highlighter-rouge {
+    pre.lineno {
+      display: none;
+    }
+    td.rouge-code {
+      @extend %code-snippet-padding;
+    }
+  }
+}
+

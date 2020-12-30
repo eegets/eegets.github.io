@@ -339,7 +339,7 @@ public class Test {
         list1.add("abc");
 
         ArrayList<Integer> list2 = new ArrayList<Integer>();
-        list2.add(123);It can be toggled by the following line to under plainwhite in 
+        list2.add(123);
         System.out.println(list1.getClass() == list2.getClass());
     }
 }
