@@ -19,6 +19,7 @@ pre.highlight, code {
   color: var(--highlighter-rouge-color);
   margin-top: 0.5rem;
   margin-bottom: 1.2em; /* Override BS Inline-code style */
+  background: #ff0000;
 }
 
 /* Hide line numbers for default, console, and terminal code snippets */
