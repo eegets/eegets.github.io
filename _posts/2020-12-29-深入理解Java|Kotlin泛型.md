@@ -266,7 +266,7 @@ Kotlin
 
 ## 单个泛型参数约束[Java]/[Kotln]
 
-单个泛型约束还是很简单的，Java中我们使用`extends`进行约束，Kotlin中使用`：`
+单个泛型约束还是很简单的，Java中我们使用`extends`进行约束，Kotlin中使用：
 
 我们想实现两个泛型参数的比较，使用Comparable进行比较，代码如下：
 
