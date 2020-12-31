@@ -8,10 +8,9 @@ description: > # this means to ignore newlines until "show_exerpts:"
 show_excerpts: true # set to true to show excerpts on the homepage
 
 
-markdown: kramdown
-#redcarpet:
-#    extensions: [ "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
- 
+markdown: redcarpet
+redcarpet:
+    extensions: ["tables"]
 #  kramdown:
 #   html_to_native: true
   
