@@ -30,9 +30,6 @@ div {
     pre.lineno {
       display: none;
     }
-    td.rouge-code {
-      @extend %code-snippet-padding;
-    }
   }
 }
 
