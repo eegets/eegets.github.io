@@ -271,7 +271,8 @@ Kotlin
 我们想实现两个泛型参数的比较，使用Comparable进行比较，代码如下：
 
 Java
-```Java
+
+```java
 public <T extends Comparable<T>> T maxOf(T params1, T params2) {
     if (params1.compareTo(params2) > 0) {
         return params1;
@@ -282,7 +283,8 @@ public <T extends Comparable<T>> T maxOf(T params1, T params2) {
 ```
 
 Kotlin
-```Kotlin
+
+```kotlin
 fun <T: Comparable<T>> maxOf(params1: T, params2: T): T {
     return if (params1 > params2) {
         params1
