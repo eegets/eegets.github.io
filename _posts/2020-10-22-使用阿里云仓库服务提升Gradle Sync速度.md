@@ -1,6 +1,8 @@
-![timg (2).jpeg](https://upload-images.jianshu.io/upload_images/18406403-19dfb490c1dcc92c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在天朝使用jcenter、mavenCentral及google三个远程仓库，Gradle Sync会很慢，goole仓库甚至需要[科学上网](https://github.com/hugetiny/awesome-vpn)才能访问。为了加快Gradle Sync速度，一招教你优先用 [阿里云仓库服务](https://maven.aliyun.com/mvn/view) 的仓库作为下载源。
+
+
+![timg (2).jpeg](https://upload-images.jianshu.io/upload_images/18406403-19dfb490c1dcc92c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### Maven仓库列表
 |  仓库名 | 简介  | 实际地址 | 使用地址 |
