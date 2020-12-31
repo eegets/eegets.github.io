@@ -15,8 +15,6 @@ pre.highlight, code {
 
 
 .highlighter-rouge {
-  @extend %code-snippet-bg;
-  @extend %code-snippet-radius;
 
   color: var(--highlighter-rouge-color);
   margin-top: 0.5rem;
