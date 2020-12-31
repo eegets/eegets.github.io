@@ -1,3 +1,8 @@
+---
+layout: post
+title:  "使用阿里云仓库服务提升Gradle Sync速度"
+categories: gradle 阿里云仓库
+---
 
 在天朝使用jcenter、mavenCentral及google三个远程仓库，Gradle Sync会很慢，goole仓库甚至需要[科学上网](https://github.com/hugetiny/awesome-vpn)才能访问。为了加快Gradle Sync速度，一招教你优先用 [阿里云仓库服务](https://maven.aliyun.com/mvn/view) 的仓库作为下载源。
 

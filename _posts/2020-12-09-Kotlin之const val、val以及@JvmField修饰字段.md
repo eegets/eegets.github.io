@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Kotlin之const val、val以及@JvmField修饰字段"
+categories: Kotlin const val @JvmField
+---
+
 我们先看看kotlin官方文档的解释
 
 * val 声明一个`只读属性(也称作只读变量)`或`局部变量`
