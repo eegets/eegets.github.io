@@ -84,7 +84,9 @@ activity_translate.xml
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
+
 TranslateActivity.kt
+
 ```kotlin
 class  TranslateActivity : AppCompatActivity() {
 

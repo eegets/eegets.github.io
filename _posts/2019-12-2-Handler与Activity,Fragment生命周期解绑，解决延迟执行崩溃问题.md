@@ -1,7 +1,13 @@
-
+---
+layout: post
+title:  "Handler与Activity,Fragment生命周期解绑，解决延迟执行崩溃问题"
+categories: handler 生命周期绑定
+---
 
 ## 存在的问题
+
 类似这样的代码
+
 ```java
 delayRun(Runnable {
 		smartLog {
@@ -14,14 +20,18 @@ activity?.finish()
 会发生的场景
 
   * activity 销毁
+
   * Runanble的内容依然会在执行
+
   * 如果这其中有在Activity销毁进行置为null的代码，就会产生NPE处理。
   
   
 ## 解决的思路
+
   * 在Activity(Fragment)销毁前，清除正在消息队列中的任务
-  
+
 ## 实现的方法
+
 ```java
 /**
  * 处理Handler与生命周期载体的解绑关系
@@ -70,8 +80,8 @@ object HandlerGuard {
 
 ```
 
-
 ## 调用与验证示例
+
 ```java
 @TestName("HandlerGuard相关")
 class HandlerGuardTestFragment : TestableFragment() {
@@ -123,7 +133,5 @@ class HandlerGuardTestFragment : TestableFragment() {
 
     override fun runNonUITests() {
     }
-
-
 }
 ```

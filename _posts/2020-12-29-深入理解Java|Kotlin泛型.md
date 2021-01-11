@@ -7,19 +7,30 @@ categories: Kotlin Java 泛型
 Java泛型是JDK1.5引入的一个新特性，是一种参数化类型。参数化类型就是在不创建新类型的情况下，通过泛型指定的泛泛类型控制形参限制的类型。允许在编译期检测非法类型。
 
 # 泛型特点
+
 * 类型安全。使用泛型定义的参数进行，在编译期可以对一个类型进行验证，从而更快的暴露问题
+
 * 消除强制类型转换。
+
 * 避免了不必要的[装箱、拆箱](https://www.cnblogs.com/dolphin0520/p/3780005.html)操作，提高程序性能
+
 * 提高代码的重用性
 
 # 命名类型参数
 * E - 元素，主要由Java集合(Collections)框架使用。
+
 * K - 键，主要用于表示映射中的键的参数类型。
+
 * V - 值，主要用于表示映射中的值的参数类型。
+
 * N - 数字，主要用于表示数字。
+
 * T - 类型，主要用于表示第一类通用型参数。
+
 * S - 类型，主要用于表示第二类通用类型参数。
+
 * U - 类型，主要用于表示第三类通用类型参数。
+
 * V - 类型，主要用于表示第四个通用类型参数。
 
 
@@ -30,6 +41,7 @@ Java泛型是JDK1.5引入的一个新特性，是一种参数化类型。参数�
 泛型类的声明和普通类声明类似，除了在类名后添加类型参数声明。
 
 定义
+
 ```java
 修饰符 class 类名<声明自定义泛型> {
     ...
@@ -55,13 +67,17 @@ public static class Container<K, V> {
 ```
 
 ## 泛型接口
+
 定义
+
 ```java
 修饰符 interface 接口名<声明自定义泛型>{
 
 }
 ```
+
 实例
+
 ```java
 public interface Generator<T> {
     T init();
@@ -83,13 +99,17 @@ public class GeneratorClass2 implements Generator<Integer> {
 ```
 
 ## 泛型方法
+
 定义
+
 ```java
 修饰符 返回值类型 接口名<声明自定义泛型>{
 
 }
 ```
+
 实例
+
 ```java
 public interface Generator<T> {
     T init();
@@ -114,8 +134,11 @@ public class GeneratorClass2 implements Generator<Integer> {
 # 通配符
 
 ## 通配符的产生
+
 任何使用父类的地方可以被它的子类替换，我们在使用类和对象时经常会接触到里式替换原则，其实在数组中一样也符合这种原则
-如下：
+
+如下
+
 ```java
   class Fruit {}
     class Apple extends Fruit {}
@@ -140,7 +163,9 @@ public class GeneratorClass2 implements Generator<Integer> {
         }
     }
 ```
+
 数组中的这种向上转变称为数组协变，而泛型是不支持的，如下代码
+
 ```java
  List<Fruit> fruits=new ArrayList<Apple>();//error
 ```
@@ -149,6 +174,7 @@ public class GeneratorClass2 implements Generator<Integer> {
 Java的泛型的这种特性对于有需要向上转型的需求时就无能为力，所以 Java 为了满足这种需求设计出了通配符.
 
 ## 上边界限定通配符[Java]/协变[Kotln]
+
 Java
 
 Java语言利用 `<? extends T>` 形式的通配符可以实现泛型的向上转型：
@@ -185,6 +211,7 @@ Kotlin语言利用`<out T>`形式的通配符实现泛型的向上转型：
 
 
 ## 下边界限定通配符[Java]/逆变[Kotln]
+
 Java
 
 Java语言利用 `<? super T>` 形式的通配符可以实现泛型的向上转型：
@@ -217,6 +244,7 @@ fun ccc() {
     }
 }
 ```
+
  与上边界通配符相反，下边界通配符通常限定读的操作，开放写的操作，对于如上代码，它标示某种类型的List，这个类型是Apple的基础类型。也就是说，我们实际上并不知道类型是什么，但是这个类型肯定是Apple的父类型。因此，我们知道向这个List添加一个Apple对象或者其子类型对象是安全的，这些对象都可以向上转型为Apple。但是我们不知道加入Fruit对象是否安全，
 
 ## 无边界通配符[Java]/星投影[Kotln]
@@ -234,6 +262,7 @@ kotlin
 ```kotlin
 <*>
 ```
+
 无边界通配符或星投影是没有任何限定的，正是由于其没任何限定，所以我们并不能确定参数是哪种类型，此时我们也是不可以往其中添加对象的。
 
 `MutableList<?>`和`MutableList`有什么区别呢？
@@ -249,7 +278,9 @@ Java
   List list2 = new ArrayList();
   aaa1.add(""); //Ok
 ```
+
 Kotlin
+
 ```kotlin
 
   val list1: MutableList<*> = mutableListOf<Any>()
@@ -333,6 +364,7 @@ fun <T, R> maxOf(params1: T, params2: T): R where T: Comparable<T>, T:() ->R {
 例如定义List<Object>和List<String>等类型，在编译后都会变成List，JVM看到的只是List，而由泛型附加的类型信息对JVM是看不到的
 
 * 1：原始类型相等
+
 ```java
 public class Test {
     public static void main(String[] args) {
@@ -384,15 +416,19 @@ class Pair<T> {
     }  
 }
 ```
+
 因为在Pair<T>中，T 是一个无限定的类型变量，所以用Object替换，其结果就是一个普通的类，如同泛型加入Java语言之前的已经实现的样子。在程序中可以包含不同类型的Pair，如Pair<String>或Pair<Integer>，但是擦除类型后他们的就成为原始的Pair类型了，原始类型都是Object。
 
 [关于类型擦除的问题，查看大神文章即可](https://www.cnblogs.com/wuqinglong/p/9456193.html)
 
 # 类型擦除引起的问题和解决办法
+
 因为种种原因[部分原因是因为java要兼容所有用户，在Jdk1.5之前是没有泛型的，但是这个量级又比较庞大，所以Sun公司不得已才使用伪泛型]，Java不能实现真正的泛型，只能使用类型擦除的伪泛型，但是这也引发了一些新的问题。
 
 **1：先检查、再编译，以及检查编译的对象和引用传递问题**
+
 先来看一段代码
+
 ```java
 ArrayList<String> list1 = new ArrayList<>();
 list.add(1)  //编译错误
@@ -407,7 +443,6 @@ ArrayList<String> list1 = new ArrayList<>();
 list1.add(1); //编译错误
 list1.add(""); //编译通过
 
-
 ArrayList list2 = new ArrayList<String>();
 list2.add(1); //编译通过 
 list2.add(""); //编译通过 
@@ -417,7 +452,8 @@ list2.add(""); //编译通过
 
 主要原因是`new ArrayList()`只是在内存中开辟了一个存储控件，可以存储任何类型对象，而真正涉及类型检测的是它的引用，因为我们的list1引用是`ArrayList<String>`，所以能完成泛型类型的检测，而list2引用的是`ArrayList`，没有使用泛型，所以是不行的。
 
-举个更全面的例子：
+举个更全面的例子
+
 ```java
 public static void main(String[] args) {  
     ArrayList<String> arrayList1=new ArrayList();  
@@ -465,8 +501,8 @@ class Pair<T> {
 }
 ```
   
-
 然后我们想要一个子类继承它
+
 ```java
 class DateInter extends Pair<Date> {  
     @Override  
@@ -479,6 +515,7 @@ class DateInter extends Pair<Date> {
     }  
 }
 ```  
+
 在这个子类中，我们设定父类的泛型类型为Pair<Date>，在子类中，我们覆盖了父类的两个方法，我们的原意是这样的：
 将父类的泛型类型限定为Date，那么父类里面的两个方法的参数都为Date类型：“
 
@@ -493,7 +530,7 @@ public void setValue(Date value) {
  
 所以，我们在子类中重写这两个方法一点问题也没有，实际上，从他们的@Override标签中也可以看到，一点问题也没有，实际上是这样的吗？
 
-分析：
+分析
 
 实际上，类型擦除后，父类的的泛型类型全部变为了原始类型Object，所以父类编译之后会变成下面的样子：
 
@@ -510,6 +547,7 @@ class Pair {
 ```
   
 再看子类的两个重写的方法的类型：
+
 ```java
 @Override  
 public void setValue(Date value) {  
@@ -522,6 +560,7 @@ public Date getValue() {
 ```
   
 先来分析setValue方法，父类的类型是Object，而子类的类型是Date，参数类型不一样，这如果实在普通的继承关系中，根本就不会是重写，而是重载。
+
 我们在一个main方法测试一下：
 
 ```java
@@ -601,6 +640,7 @@ class com.tao.test.DateInter extends com.tao.test.Pair<java.util.Date> {
 所以，虚拟机巧妙的使用了`桥方法`，来解决了类型擦除和多态的冲突。
 
 # 泛型内联特化Reified [Kotlin独有]
+
 我们在之前已经了解了泛型的类型擦除，类型擦除大致会带来一些问题，
 比如Kotlin中常用的`转换操作符 as`
 
@@ -612,6 +652,7 @@ fun <T> Any.asAny(): T? {
 上述代码在进行类型转换时，没有进行检查，可能会出现因为类型不一致而出现的运行时崩溃
 
 例如下面的代码
+
 ```kotlin
 fun <T> Any.asAny(): T? {
     return this as? T
@@ -622,13 +663,17 @@ fun main() {
     println(res)
 }
 ```
+
 输出结果
+
 ```kotlin
 Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
 	at com.eegets.javademo.generic.ExtKt.main(Ext.kt:24)
 	at com.eegets.javademo.generic.ExtKt.main(Ext.kt)
 ```
+
 可以看到出现了ClassCastException异常，是因为我们没有进行类型检查，所以为了安全获取数据一般需要显示传递转换结果的class信息
+
 ```kotlin
 fun <T> Any.asAny(clazz: Class<T>): T? {
     return if (clazz.isInstance(this)) {
@@ -643,10 +688,13 @@ fun main() {
     println(res)
 }
 ```
+
 输出结果
+
 ```kotlin
 null
 ```
+
 这样是能解决问题，但是需要传递class方式，这种方式比较笨重，尤其是参数过多时。
 
 那有没有可以排除这种传递参数之外更好的实现呢？
@@ -656,10 +704,13 @@ null
 好在Kotlin有更好的应对方案，Java没有，这就是Reified[具体化也可以叫特化]关键字
 
 Reified使用非常简单，主要分两步（都是必须要加的）：
+
 * 1：在泛型类型前面增加reified修饰符
+
 * 2：在方法前增加inline内联
 
 我们可以改进一下上述代码
+
 ```kotlin
 inline fun <reified T> Any.asAny(clazz: Class<T>): T? {
     return if (this is T) {

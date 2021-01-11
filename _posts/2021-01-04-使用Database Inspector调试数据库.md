@@ -6,7 +6,7 @@ categories: Database 数据库
 
 在 Android Studio 4.1 及更高版本中，您可以利用 Database Inspector 在应用运行时检查、查询和修改应用的数据库。这对于数据库调试尤为有用。Database Inspector 可处理普通的 SQLite 数据库以及在 SQLite 的基础上构建的库（例如 [Room](https://developer.android.com/training/data-storage/room?hl=zh-cn)）。
 
-> **注意：**Database Inspector 仅可与 API 级别 26 及更高版本的 Android 操作系统中所包含的 SQLite 库结合使用。它无法处理与您的应用捆绑的其他 SQLite 库。
+> **注意：** Database Inspector 仅可与 API 级别 26 及更高版本的 Android 操作系统中所包含的 SQLite 库结合使用。它无法处理与您的应用捆绑的其他 SQLite 库。
 
 ## 打开 Database Inspector
 
@@ -32,7 +32,7 @@ Databases 窗格显示应用中的数据库列表以及每个数据库包含的�
 
 如果您希望 Database Inspector 在您与正在运行的应用交互时自动更新它呈现的数据，请勾选检查器窗口顶部的 Live updates 复选框。启用实时更新后，检查器窗口中的表格将变为只读状态，您无法修改其中的值。
 
-或者，您也可以通过点击检查工具窗口顶部的 Refresh table 按钮以手动更新数据。
+或者您也可以通过点击检查工具窗口顶部的 Refresh table 按钮以手动更新数据。
 
 ## 查询数据库
 

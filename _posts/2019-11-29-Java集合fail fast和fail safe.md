@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Java集合fail fast 和 fail safe"
+categories: fail fast fail safe
+---
+
 
 在我们讨论fail fast 和fail safe两种机制的区别时,我们先了解一下什么是并发修改
 
@@ -264,15 +270,21 @@ Process finished with exit code 0
 虽然fail safe避免了抛出异常,但是存在以下缺点:
 
 * 复制时需要额外的空间以及时间上的开销
+
 * 不能保证遍历的是最新的内容
 
 ### 总结一下
 
 *  在操作数据变化时尽量少的使用while循环或者foreach循环(`增强for循环内部也是通过迭代器处理`)遍历迭代器
+
 * 如果非要使用while或foreach循环,那么我们可以使用 `CopyOnWriteArrayList`和`ConcurrentHashMap`
+
 * 使用`普通for循环`遍历数据
+
 * 在使用iterator迭代的时候使用synchronized或者Lock进行同步
 
-引用: 
+引用
+
 https://blog.csdn.net/ch717828/article/details/46892051
+
 https://medium.com/@mr.anmolsehgal/fail-fast-and-fail-safe-iterations-in-java-collections-11ce8ca4180e
