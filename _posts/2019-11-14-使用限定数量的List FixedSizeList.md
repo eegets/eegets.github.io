@@ -1,11 +1,9 @@
 ---
 layout: post
-title:  "使用限定数量的List FixedSizeList"
+title:  "KotlinKnife异常java.lang.IllegalStateException ID not found"
+date:   2020-12-15 21:03:36
 categories: fixedSizeList
 ---
-
-
-
 ## 是什么
 
   * 一个限定数量的List实现

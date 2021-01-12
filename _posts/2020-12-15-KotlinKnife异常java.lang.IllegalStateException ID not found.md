@@ -4,7 +4,6 @@ title:  "KotlinKnife异常java.lang.IllegalStateException ID not found"
 date:   2020-12-15 21:03:36
 categories: Exception KotlinKnife
 ---
-
 我们项目中使用KotlinKnife实例化界面布局时有时候会出现如下错误
 
 ```kotlin
