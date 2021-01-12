@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "使用Database Inspector调试数据库"
+date:   2021-01-06 21:03:36
 categories: Database 数据库
 ---
-
 在 Android Studio 4.1 及更高版本中，您可以利用 Database Inspector 在应用运行时检查、查询和修改应用的数据库。这对于数据库调试尤为有用。Database Inspector 可处理普通的 SQLite 数据库以及在 SQLite 的基础上构建的库（例如 [Room](https://developer.android.com/training/data-storage/room?hl=zh-cn)）。
 
 > **注意：** Database Inspector 仅可与 API 级别 26 及更高版本的 Android 操作系统中所包含的 SQLite 库结合使用。它无法处理与您的应用捆绑的其他 SQLite 库。
