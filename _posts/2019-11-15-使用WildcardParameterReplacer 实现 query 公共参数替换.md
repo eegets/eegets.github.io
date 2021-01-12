@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "使用WildcardParameterReplacer 实现 query 公共参数替换"
+categories: okhttp 拦截器
+---
+
+
 ## 痛点
   * 各种接口随意传递多余的公共参数，比如upk
   * 每次显式传递这种参数使得方法参数变得臃肿

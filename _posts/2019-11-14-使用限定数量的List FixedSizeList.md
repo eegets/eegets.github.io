@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "使用限定数量的List FixedSizeList"
+categories: fixedSizeList
+---
+
 
 
 ## 是什么
