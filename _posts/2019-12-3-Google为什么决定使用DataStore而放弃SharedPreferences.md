@@ -4,7 +4,7 @@ title:  "Google为什么决定使用DataStore而放弃SharedPreferences"
 categories: dataStore
 ---
 
-## 什么是DataStore
+什么是DataStore
 
 Jetpack DataStore是一种新型数据存储解决方案
 

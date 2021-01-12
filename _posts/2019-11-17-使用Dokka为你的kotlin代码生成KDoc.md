@@ -4,9 +4,6 @@ title:  "使用Dokka为你的Kotlin代码生成KDoc"
 categories: Dokka
 ---
 
-
-### 什么是Dokka
-
 Dokka是Kotlin的文档引擎，执行与Java的javadoc相同的功能。就像Kotlin本身一样，Dokka完全支持Java / Kotlin混合语言项目。
 
 #### Dokka可以生成多种格式的文档:

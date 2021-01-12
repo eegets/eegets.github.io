@@ -5,11 +5,14 @@ categories: okhttp 拦截器
 ---
 
 
-## 痛点
+#### 痛点
+
   * 各种接口随意传递多余的公共参数，比如upk
+
   * 每次显式传递这种参数使得方法参数变得臃肿
   
-## 怎么解决
+#### 怎么解决
+
   * 利用OKHttp的Interceptor 可以实现的更加简洁和高效
 
 ## 我需要怎么做
@@ -17,6 +20,7 @@ categories: okhttp 拦截器
 已位置信息为例，比如我们需要增加一个位置信息
 
 ### 添加到URL中
+
 ```java
 /**
      * 搜索页面，猜你喜欢
@@ -31,10 +35,13 @@ categories: okhttp 拦截器
 如上增加了`locationInfo=_jisuda_location_info_`
 
   * `_jisuda_location_info_ `不再需要encode，这种形式较好
+
   * 注意使用`%xxxx%`会存在一定的问题，不建议使用
+
   * 如果所增加参数位于第一个位置，前面是`?`，否则前面是`&`这是一个常识
   
 ### 创建一个WildcardParameterReplacer
+
 ```kotlin
 object JisudaLocationInfoReplacer : WildcardParameterReplacer() {
     override fun getWildcard(): String {
@@ -52,9 +59,11 @@ object JisudaLocationInfoReplacer : WildcardParameterReplacer() {
 需要做两件事
 
   1. 提供想要替换的内容字符串`_jisuda_location_info_`   
+
   2. 提供替换后的值`LocationRetriever.getJisudaAddressCodeValue()`
   
 ### 注册WildcardParameterReplacer  
+
 ```kotlin
 package com.secoo.app.network.url.rewrite
 

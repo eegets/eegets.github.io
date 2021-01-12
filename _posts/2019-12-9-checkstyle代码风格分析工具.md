@@ -5,6 +5,7 @@ categories: checkStyle
 ---
 
 
+
 ## 全局执行checkstyle
 
 ```java
