@@ -4,7 +4,6 @@ title:  "使用限定数量的List FixedSizeList"
 date:   2019-12-14 21:03:36
 categories: fixedSizeList
 ---
-
 ## 是什么
 
   * 一个限定数量的List实现
