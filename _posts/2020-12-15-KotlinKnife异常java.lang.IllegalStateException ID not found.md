@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "KotlinKnife异常java.lang.IllegalStateException ID not found"
+date:   2020-12-15 21:03:36
 categories: Exception KotlinKnife
 ---
 
