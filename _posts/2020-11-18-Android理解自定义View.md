@@ -3,7 +3,6 @@ layout: post
 title:  "Android理解自定义View"
 categories: 自定义View
 ---
-
 当Android SDK中提供的系统UI控件无法满足业务需求时，我们就需要考虑自己实现UI控件。
 
 自定义UI控件有2种方式：

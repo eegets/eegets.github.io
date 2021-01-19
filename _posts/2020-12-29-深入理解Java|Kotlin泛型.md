@@ -3,7 +3,6 @@ layout: post
 title:  "深入理解Java|Kotlin泛型"
 categories: Kotlin Java 泛型
 ---
-
 Java泛型是JDK1.5引入的一个新特性，是一种参数化类型。参数化类型就是在不创建新类型的情况下，通过泛型指定的泛泛类型控制形参限制的类型。允许在编译期检测非法类型。
 
 # 泛型特点

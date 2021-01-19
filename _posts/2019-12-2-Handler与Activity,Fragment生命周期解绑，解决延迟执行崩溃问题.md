@@ -3,9 +3,6 @@ layout: post
 title:  "Handler与Activity,Fragment生命周期解绑，解决延迟执行崩溃问题"
 categories: handler 生命周期绑定
 ---
-
-
-
 ## 存在的问题
 
 类似这样的代码

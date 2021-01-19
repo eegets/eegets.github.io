@@ -3,7 +3,6 @@ layout: post
 title:  "Charles打断点（Breakpoints）"
 categories: Charles 工具
 ---
-
 在开发过程中我们有时候想让服务器返回一些特定的内容，方便我们调试一些特定情况。有两种办法：第一种就是苦口婆心的求接口制造一些特定数据，第二种就是不靠别人，靠Charles就可以实现。
 
 # Charles实现打断点操作

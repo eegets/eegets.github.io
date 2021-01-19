@@ -3,7 +3,6 @@ layout: post
 title:  "Bash Commands Guide"
 categories: Linux Base命令
 ---
-
 Bash是一个交互式命令行解释器或shell。我想分享一下shell命令的常见用法以及它们是什么。我创建这个列表是为了节省时间。因为没有GUI，所有的事务在不使用鼠标的情况下移动得更快。
 
 来源:https://medium.com/@duruldalkanat/bash-commands-guide-129c81cbfe87

@@ -3,9 +3,6 @@ layout: post
 title:  "Checkstyle代码风格分析工具"
 categories: checkStyle
 ---
-
-
-
 ## 全局执行checkstyle
 
 ```java

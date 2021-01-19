@@ -3,7 +3,6 @@ layout: post
 title:  "Android transitionName共享元素"
 categories: AndroidUI transitionName
 ---
-
 先来看看效果
 
 ![SVID_20201222_153820_1.gif](https://upload-images.jianshu.io/upload_images/18406403-c15cecf98496d733.gif?imageMogr2/auto-orient/strip)

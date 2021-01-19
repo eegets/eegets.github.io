@@ -3,10 +3,6 @@ layout: post
 title:  "git bisect二分查找"
 categories: bisect git
 ---
-
-
-
-
 ##  使用  git bisect  二分查找定位bug
 
 ## 原理

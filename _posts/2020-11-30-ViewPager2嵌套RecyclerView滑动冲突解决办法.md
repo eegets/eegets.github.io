@@ -3,7 +3,6 @@ layout: post
 title:  "ViewPager2嵌套RecyclerView滑动冲突解决办法"
 categories: ViewPager2 RecycleView
 ---
-
 在嵌套的滚动视图与包含它的 `ViewPager2` 对象方向相同的情况下，`ViewPager2` 本身并不支持该滚动视图。例如，在垂直方向的 `ViewPager2` 对象内，垂直滚动视图无法滚动。
 
 为了支持方向相同的 `ViewPager2` 对象内的滚动视图，如果您希望改为滚动嵌套的元素，则必须对 `ViewPager2` 对象调用 [`requestDisallowInterceptTouchEvent()`](https://developer.android.google.cn/reference/android/view/ViewGroup?hl=zh_cn#requestDisallowInterceptTouchEvent(boolean))。[ViewPager2 嵌套滚动示例](https://github.com/android/views-widgets-samples/blob/master/ViewPager2/app/src/main/res/layout/item_nested_recyclerviews.xml#L43)展示了一种使用通用[自定义封装容器布局](https://github.com/android/views-widgets-samples/blob/master/ViewPager2/app/src/main/java/androidx/viewpager2/integration/testapp/NestedScrollableHost.kt)解决此问题的办法。
